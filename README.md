@@ -21,9 +21,10 @@ sudo apt install ./nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_amd64.deb
 sudo apt update
 
 #Install CUDA and tools. Include optional NCCL 2.x
-sudo apt install cuda9.0 cuda-cublas-9-0 cuda-cufft-9-0 cuda-curand-9-0 \
-    cuda-cusolver-9-0 cuda-cusparse-9-0 libcudnn7=7.2.1.38-1+cuda9.0 \
-    libnccl2=2.2.13-1+cuda9.0 cuda-command-line-tools-9-0
+sudo apt install cuda-10-0 cuda-cublas-10-0 cuda-cufft-10-0 cuda-curand-10-0 \
+    cuda-cusolver-10-0 cuda-cusparse-10-0 libcudnn7 libcudnn7-dev \
+    libnccl2 libnccl-dev cuda-command-line-tools-10-0 \
+    cuda-cublas-dev-10-0 cuda-cufft-dev-10-0 cuda-curand-dev-10-0 cuda-cusolver-dev-10-0 cuda-cusparse-dev-10-0
 
 #Optional: Install the TensorRT runtime (must be after CUDA install)
 sudo apt update
