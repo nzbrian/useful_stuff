@@ -26,7 +26,4 @@ sudo apt install cuda-10-0 cuda-cublas-10-0 cuda-cufft-10-0 cuda-curand-10-0 \
     libnccl2 libnccl-dev cuda-command-line-tools-10-0 \
     cuda-cublas-dev-10-0 cuda-cufft-dev-10-0 cuda-curand-dev-10-0 cuda-cusolver-dev-10-0 cuda-cusparse-dev-10-0
 
-#Optional: Install the TensorRT runtime (must be after CUDA install)
-sudo apt update
-sudo apt install libnvinfer4=4.1.2-1+cuda9.0
 
