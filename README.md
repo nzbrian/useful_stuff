@@ -26,4 +26,29 @@ sudo apt install cuda-10-0 cuda-cublas-10-0 cuda-cufft-10-0 cuda-curand-10-0 \
     libnccl2 libnccl-dev cuda-command-line-tools-10-0 \
     cuda-cublas-dev-10-0 cuda-cufft-dev-10-0 cuda-curand-dev-10-0 cuda-cusolver-dev-10-0 cuda-cusparse-dev-10-0
 
+#download and install tensorrt
+https://developer.nvidia.com/nvidia-tensorrt-download
+....
+sudo dpkg -i nv-tensorrt-repo-ubuntu1804-cuda10.0*
+
+
+# Build Tensorflow
+based on https://www.tensorflow.org/install/source
+
+sudo apt install python3-dev python3-pip
+sudo python3 -m pip uninstall pip
+sudo apt install python3-pip --reinstall
+
+pip3 install -U --user six numpy wheel mock
+pip install -U --user keras_applications==1.0.6 --no-deps
+pip install -U --user keras_preprocessing==1.0.5 --no-deps
+
+#install Bazel - the build tool
+sudo apt install pkg-config zip g++ zlib1g-dev unzip
+#download binary installer from https://github.com/bazelbuild/bazel/releases   looks like:
+https://github.com/bazelbuild/bazel/releases/download/0.22.0/bazel-0.22.0-installer-linux-x86_64.sh
+chmod +x bazel-*
+./bazel-* --user
+
+add this to the end of your ~/.bashrc   export PATH="$PATH:$HOME/bin"
 
