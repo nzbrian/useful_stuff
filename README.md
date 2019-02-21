@@ -39,8 +39,13 @@ sudo python3 -m pip uninstall pip
 sudo apt install python3-pip --reinstall
 
 pip3 install -U --user six numpy wheel mock
-pip install -U --user keras_applications==1.0.6 --no-deps
-pip install -U --user keras_preprocessing==1.0.5 --no-deps
+pip3 install -U --user keras_applications==1.0.6 --no-deps
+pip3 install -U --user keras_applications==1.0.6 --no-deps
+
+#to avoid error at end not finding keras_applications, also do
+pip3 install keras_applications==1.0.4 --no-deps
+pip3 install keras_preprocessing==1.0.2 --no-deps
+pip3 install h5py==2.8.0
 
 #install Bazel - the build tool
 sudo apt install pkg-config zip g++ zlib1g-dev unzip
