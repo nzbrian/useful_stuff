@@ -27,10 +27,9 @@ sudo apt install cuda-10-0 cuda-cublas-10-0 cuda-cufft-10-0 cuda-curand-10-0 \
     cuda-cublas-dev-10-0 cuda-cufft-dev-10-0 cuda-curand-dev-10-0 cuda-cusolver-dev-10-0 cuda-cusparse-dev-10-0
 
 #download and install tensorrt
-https://developer.nvidia.com/nvidia-tensorrt-download
-....
-sudo dpkg -i nv-tensorrt-repo-ubuntu1804-cuda10.0*
-
+#don't do this https://developer.nvidia.com/nvidia-tensorrt-download
+#do this:
+sudo apt install python-libnvinfer python-libnvinfer-dev
 
 # Build Tensorflow
 based on https://www.tensorflow.org/install/source
@@ -52,3 +51,47 @@ chmod +x bazel-*
 
 add this to the end of your ~/.bashrc   export PATH="$PATH:$HOME/bin"
 
+export PATH="$PATH:$HOME/bin"
+
+#clone the repo
+git clone https://github.com/tensorflow/tensorflow.git
+
+#check which capabilities your GPU has
+https://developer.nvidia.com/cuda-gpus. (1050 has 6.1)
+
+#build
+cd tensorflow
+./configure
+
+
+Please specify the location of python. [Default is /usr/bin/python]: /usr/bin/python3
+Please input the desired Python library path to use.  Default is [/usr/lib/python3/dist-packages]
+Do you wish to build TensorFlow with XLA JIT support? [Y/n]: 
+Do you wish to build TensorFlow with OpenCL SYCL support? [y/N]: 
+Do you wish to build TensorFlow with ROCm support? [y/N]: 
+Do you wish to build TensorFlow with CUDA support? [y/N]: y
+Please specify the CUDA SDK version you want to use. [Leave empty to default to CUDA 10.0]:
+Please specify the location where CUDA 10.0 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: 
+Please specify the cuDNN version you want to use. [Leave empty to default to cuDNN 7]: 
+Please specify the location where cuDNN 7 library is installed. Refer to README.md for more details. [Default is /usr/local/cuda]: 
+Do you wish to build TensorFlow with TensorRT support? [y/N]: y
+Please specify the location where TensorRT is installed. [Default is /usr/lib/x86_64-linux-gnu]:
+Please specify the locally installed NCCL version you want to use. [Default is to use https://github.com/nvidia/nccl]:
+
+Please specify a list of comma-separated CUDA compute capabilities you want to build with.
+You can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.
+Please note that each additional compute capability significantly increases your build time and binary size, and that TensorFlow only supports compute capabilities >= 3.5 [Default is: 3.5,7.0]:6.1
+
+Do you want to use clang as CUDA compiler? [y/N]:
+Please specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]:
+Do you wish to build TensorFlow with MPI support? [y/N]:
+Please specify optimization flags to use during compilation when bazel option "--config=opt" is specified [Default is -march=native -Wno-sign-compare]: 
+Would you like to interactively configure ./WORKSPACE for Android builds? [y/N]: 
+
+
+bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
+
+./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+
+#install
+pip install /tmp/tensorflow_pkg/tensorflow-version-tags.whl
