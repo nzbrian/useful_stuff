@@ -16,9 +16,8 @@ unzip VCTK-Corpus.zip
 #I'm getting lots of the below out of memory errors, and trying on a very small dataset with threshold = 0 still runs out of memory
 #probably 0.1 will be better.
 
-python train.py --data_dir=VCTK-Corpus > train.log 2>&1
-
-python train.py --data_dir=VCTK-Corpus --silence_threshold=0 > train.log 2>&1
+#python train.py --data_dir=VCTK-Corpus > train.log 2>&1
+#python train.py --data_dir=VCTK-Corpus --silence_threshold=0 > train.log 2>&1
 
 python train.py --data_dir=VCTK-Corpus --silence_threshold=0.1 > train.log 2>&1
 
