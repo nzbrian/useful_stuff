@@ -1,0 +1,15 @@
+sudo apt install samba
+
+sudo smbpasswd -a <user>
+
+sudo vi /etc/samba/smb.conf
+
+#add the following at the bottom
+
+[<share_name>]
+path = /<pathto>/<folder_name>
+valid users = <user>
+read only = no
+
+
+sudo systemctl restart smbd
