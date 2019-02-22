@@ -169,4 +169,5 @@ bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_
 ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 
 #install
-pip install /tmp/tensorflow_pkg/tensorflow-version-tags.whl
+#pip install /tmp/tensorflow_pkg/tensorflow-version-tags.whl
+pip install /tmp/tensorflow_pkg/tensorflow-*
