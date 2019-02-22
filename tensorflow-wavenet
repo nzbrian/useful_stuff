@@ -24,4 +24,6 @@ mkdir Corpus_ignore
 mkdir Corpus_ignore/wav48
 mkdir Corpus_ignore/txt
 mv VCTK-Corpus/wav48/p2* Corpus_ignore/wav48/
+mv VCTK-Corpus/wav48/p3[1-7]* Corpus_ignore/wav48/
 mv VCTK-Corpus/txt/p2* Corpus_ignore/txt/
+mv VCTK-Corpus/txt/p3[1-7]* Corpus_ignore/txt/
