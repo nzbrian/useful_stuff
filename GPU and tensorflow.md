@@ -177,6 +177,7 @@ pip install /tmp/tensorflow_pkg/tensorflow-*
 
 git clone https://github.com/tensorflow/tensorboard.git
 
+cd tensorboard
 bazel build tensorboard:tensorboard
 
 #run it
