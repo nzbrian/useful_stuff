@@ -1,4 +1,3 @@
-# useful_stuff
 
 # VMWare ESXi: Passing Through an NVidia graphics card to a VM
 https://ianmcdowell.net/blog/esxi-nvidia/
@@ -176,3 +175,11 @@ pip install /tmp/tensorflow_pkg/tensorflow-*
 # build Tensorboard
 #https://github.com/tensorflow/tensorboard
 
+git clone https://github.com/tensorflow/tensorboard.git
+
+bazel build tensorboard:tensorboard
+
+#run it
+./bazel-bin/tensorboard/tensorboard --logdir path/to/logs
+
+#connect to http://localhost:6006.
