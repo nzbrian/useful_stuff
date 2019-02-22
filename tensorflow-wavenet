@@ -17,3 +17,11 @@ python train.py --data_dir=VCTK-Corpus --silence_threshold=0 > train.log 2>&1
 
 #then in another window
 tail -f train.log
+
+#if you get this error: tensorflow.python.framework.errors_impl.ResourceExhaustedError: OOM when allocating tensor with shape
+#then your GPU is out of memory (I get this with a 4GB 1050Ti. You need to use a smaller dataset. So
+mkdir Corpus_ignore
+mkdir Corpus_ignore/wav48
+mkdir Corpus_ignore/txt
+mv VCTK-Corpus/wav48/p2* Corpus_ignore/wav48/
+mv VCTK-Corpus/txt/p2* Corpus_ignore/txt/
