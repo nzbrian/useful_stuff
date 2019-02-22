@@ -1,0 +1,16 @@
+#https://github.com/ibab/tensorflow-wavenet
+
+git clone https://github.com/ibab/tensorflow-wavenet.git
+cd tensorflow-wavenet/
+
+#install the tensorflow package that we created earlier.
+pip install librosa
+pip install /tmp/tensorflow_pkg/tensorflow-*
+
+#download the training data (11G) from https://datashare.is.ed.ac.uk/handle/10283/2651
+wget http://datashare.is.ed.ac.uk/download/DS_10283_2651.zip
+unzip DS_10283_2651.zip
+unzip VCTK-Corpus.zip
+
+#train the model
+python train.py --data_dir=VCTK-Corpus
