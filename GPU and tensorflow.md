@@ -182,5 +182,6 @@ bazel build tensorboard:tensorboard
 
 #run it
 ./bazel-bin/tensorboard/tensorboard --logdir path/to/logs
+#eg ./bazel-bin/tensorboard/tensorboard --logdir ../tensorflow-wavenet/logdir/
 
-#connect to http://localhost:6006.
+#connect to http://localhost:6006
