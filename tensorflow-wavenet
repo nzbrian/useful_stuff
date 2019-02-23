@@ -22,7 +22,7 @@ unzip VCTK-Corpus.zip
 #after 1.5k steps, settled around 2.5 loss.
 #Trying reduced, p300*, 0.1
 #after 5k steps, around 2.3 loss.
-#Trying reduced, all wavs, 0.1
+#Trying reduced, all wavs, 0.1, gc=32
 
 #python train.py --data_dir=VCTK-Corpus > train.log 2>&1
 #python train.py --data_dir=VCTK-Corpus --silence_threshold=0 > train.log 2>&1
