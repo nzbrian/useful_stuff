@@ -35,6 +35,9 @@ tail -f train.log
 #if looking to train VCTK per speaker
 python train.py --data_dir=VCTK-Corpus --silence_threshold=0.1 --gc_channels=32 > train.log 2>&1
 
+#with the multiple GPU changes to train.py and model.py from https://github.com/nakosung/tensorflow-wavenet
+python train.py --data_dir=VCTK-Corpus --silence_threshold=0.1 --num_gpus 2 > train.log 2>&1
+
 #--restore_from
 
 #if you get this error: tensorflow.python.framework.errors_impl.ResourceExhaustedError: OOM when allocating tensor with shape
