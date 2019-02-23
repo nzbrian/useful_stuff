@@ -15,6 +15,7 @@ unzip DS_10283_2651.zip
 unzip VCTK-Corpus.zip
 
 #train the model
+#The model defaults to ilence_threshold=3, which seems to ignore most files in my build. Googling suggests using 0.
 #I'm getting lots of the below out of memory errors, and trying on a very small dataset with threshold = 0 still runs out of memory
 #Using sample_rate of 8000, just the p30* wavs and a threshold of 0.1 runs out of memory sometime after 900 iterations.
 #Trying 8000, p30* and 0.2
