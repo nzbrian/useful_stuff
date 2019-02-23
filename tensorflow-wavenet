@@ -21,6 +21,8 @@ unzip VCTK-Corpus.zip
 #Trying reducing the model size in every dimension by half (in wavenet_params.json), 16000, p30* and 0.2
 #after 1.5k steps, settled around 2.5 loss.
 #Trying reduced, p300*, 0.1
+#after 5k steps, around 2.3 loss.
+#Trying reduced, all wavs, 0.1
 
 #python train.py --data_dir=VCTK-Corpus > train.log 2>&1
 #python train.py --data_dir=VCTK-Corpus --silence_threshold=0 > train.log 2>&1
