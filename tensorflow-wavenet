@@ -48,3 +48,6 @@ mv VCTK-Corpus/wav48/p2* Corpus_ignore/wav48/
 mv VCTK-Corpus/wav48/p3[1-7]* Corpus_ignore/wav48/
 mv VCTK-Corpus/txt/p2* Corpus_ignore/txt/
 mv VCTK-Corpus/txt/p3[1-7]* Corpus_ignore/txt/
+
+#generate a file
+python generate.py --samples 160000 --wav_out_path test.wav --gc_channels=32 --gc_cardinality=377 --gc_id=311 gc/model.ckpt-54540 > train.log 2>&1
