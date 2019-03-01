@@ -1,0 +1,10 @@
+https://www.alpinelinux.org/
+
+#enable root ssh
+
+
+https://wiki.alpinelinux.org/wiki/Alpine_Linux_package_management
+
+apk update 
+apk upgrade
+
