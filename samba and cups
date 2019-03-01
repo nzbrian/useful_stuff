@@ -22,4 +22,7 @@ sudo systemctl restart smbd
 #cups: https://help.ubuntu.com/lts/serverguide/cups.html.en-GB
 #samba: https://help.ubuntu.com/lts/serverguide/samba-printserver.html
 
-sudo apt install cups
+#going to try this on an alpine server
+#https://wiki.alpinelinux.org/wiki/Printer_Setup
+#https://wiki.alpinelinux.org/wiki/Setting_up_a_samba-server
+
