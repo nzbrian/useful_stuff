@@ -29,6 +29,24 @@ lpinfo -v
 
 #I see direct usb://Brother/HLblah
 
+#to get this Brother printer working on Ubuntu 18.04 I had to:
+#1 - think I had to add myself as a CUPS user like this
+sudo usermod -aG lpadmin brian
+#2 - ssh port forward 631 from my local machine to access CUPS webservice
+#3 - configure that to allow remote administration and to share all printers
+#4 - install 32 bit compatibility like this
+apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
+#5 create a directory needed by the Brother LPD driver:
+sudo mkdir /var/spool/lpd
+#6 - install the correct Brother LPD and CUPSwrapper pacakges from the Brother website
+sudo dpkg -i hl3150cdnlpr-1.1.2-1.i386.de
+sudo dpkg -i hl3150cdncupswrapper-1.1.2-1.i386.deb
+#7 - add that as a local printer on the CUPS webservice
+
+
+#didn't need any of the below
+#============================#
+
 sudo vi /etc/cups/cupsd.conf
 #remove the line: Listen localhost:631
 #add the line: Port 631
@@ -37,18 +55,6 @@ sudo systemctl restart cups
 
 sudo usermod -aG lpadmin root
 sudo usermod -aG lpadmin brian
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
