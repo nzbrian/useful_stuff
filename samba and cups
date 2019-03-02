@@ -26,3 +26,23 @@ sudo systemctl restart smbd
 #https://wiki.alpinelinux.org/wiki/Printer_Setup
 #https://wiki.alpinelinux.org/wiki/Setting_up_a_samba-server
 
+#enable the community repository in /etc/apk/repositories 
+apk update
+apk upgrade
+
+apk add cups cups-libs cups-client cups-filters
+
+cp /etc/cups/cupsd.conf /etc/cups/cupsd.conf.original
+chmod a-w /etc/cups/cupsd.conf.original
+
+vi /etc/cups/cupsd.conf
+#remove the line: Listen localhost:631
+#add the line: Port 631
+
+
+adduser root lp
+adduser root lpadmin
+
+rc-service cupsd start
+rc-update add cupsd
+reboot
