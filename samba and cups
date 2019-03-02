@@ -46,3 +46,6 @@ adduser root lpadmin
 rc-service cupsd start
 rc-update add cupsd
 reboot
+
+lsusb #see what usb devices are attached
+lpinfo -v # see what printers
