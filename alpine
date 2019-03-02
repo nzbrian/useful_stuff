@@ -8,3 +8,4 @@ https://wiki.alpinelinux.org/wiki/Alpine_Linux_package_management
 apk update 
 apk upgrade
 
+apk add open-vm-tools
