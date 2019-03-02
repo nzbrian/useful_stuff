@@ -9,3 +9,10 @@ apk update
 apk upgrade
 
 apk add open-vm-tools
+rc-service open-vm-tools start # start it
+rc-update add open-vm-tools.   # start at boot
+
+
+#for services you do something like
+rc-service cupsd restart
+rc-update add cupsd
